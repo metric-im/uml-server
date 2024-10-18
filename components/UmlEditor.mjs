@@ -7,22 +7,6 @@ export default class UmlEditor extends Component {
   constructor(props) {
     super(props);
   }
-  // static mint() {
-  //   let instance = new UmlEditor();
-  //   this.editor=window.ace.edit(this.code.id); // <snip> .id
-  //   this.mode = 'markdown';
-  //   this.editor.setTheme('ace/theme/twilight');
-  //   this.editor.$blockScrolling = "Infinity";
-  //   this.editor.renderer.setShowGutter(false);
-  //   this.editor.session.setUseWrapMode(true);
-  //   this.editor.setOptions({
-  //     maxLines: 10,
-  //     minLines: 10,
-  //     fontSize: "12pt"
-  //   });
-  //   this.editor.setValue(this.designSource);
-  //   return instance;
-  // }
   async render(element) {
     await super.render(element);
     this.container = this.div('uml-container',this.element);
@@ -48,7 +32,7 @@ export default class UmlEditor extends Component {
   async renderGraph() {
     console.log('render');
     this.graph.src = `/uml/draw/${encodeURIComponent(this.source.value)}`;
-    this.url.value = `<img src="${this.graph.src}"/>`;
+    this.url.value = `<a href="${this.graph.src}" target="_uml"><img src="${this.graph.src}"/></a>`;
   }
   async copyLink() {
     await navigator.clipboard.writeText(this.url.value);
