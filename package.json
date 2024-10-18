@@ -1,0 +1,23 @@
+{
+  "name": "@metric-im/uml-server",
+  "version": "1.0.0",
+  "description": "PlantUML rendering engine",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metric-im/uml-server.git"
+  },
+  "author": "Michael Sprague",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/metric-im/uml-server/issues"
+  },
+  "homepage": "https://github.com/metric-im/uml-server#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "node-plantuml": "^0.9.0"
+  }
+}
