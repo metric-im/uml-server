@@ -30,7 +30,6 @@ export default class UmlEditor extends Component {
     await this.renderGraph();
   }
   async renderGraph() {
-    console.log('render');
     this.graph.src = `/uml/draw/${encodeURIComponent(this.source.value)}`;
     this.url.value = `<a href="${this.graph.src}" target="_uml"><img src="${this.graph.src}"/></a>`;
   }
