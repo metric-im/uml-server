@@ -31,7 +31,8 @@ export default class UmlEditor extends Component {
   }
   async renderGraph() {
     this.graph.src = `/uml/draw/${encodeURIComponent(this.source.value)}`;
-    this.url.value = `<a href="${this.graph.src}" target="_uml"><img src="${this.graph.src}"/></a>`;
+    this.graph.edit = `/uml/edit/${encodeURIComponent(this.source.value)}`;
+    this.url.value = `<a href="${this.graph.edit}" target="_uml"><img src="${this.graph.src}"/></a>`;
   }
   async copyLink() {
     await navigator.clipboard.writeText(this.url.value);
