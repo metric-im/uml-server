@@ -1,6 +1,6 @@
 {
   "name": "@metric-im/uml-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PlantUML rendering engine",
   "main": "index.mjs",
   "scripts": {
