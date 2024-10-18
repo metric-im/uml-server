@@ -39,6 +39,7 @@ export default class UmlEditor extends Component {
       name:'refresh',icon:'cycle',title:'Refresh',onClick:this.renderGraph.bind(this)
     },this.controls);
     this.url = await this.draw(InputLongText,{hideTitle:true},this.controls);
+    this.url.element.classList.add('uml-url');
     this.copyButton = await this.draw(Button,{
       name:'refresh',icon:'copy',title:'Copy',onClick:this.copyLink.bind(this)
     },this.controls);
@@ -49,7 +50,9 @@ export default class UmlEditor extends Component {
     this.graph.src = `/uml/draw/${encodeURIComponent(this.source.value)}`;
     this.url.value = `<img src="${this.graph.src}"/>`;
   }
-  copyLink() {
-    console.log('copy');
+  async copyLink() {
+    await navigator.clipboard.writeText(this.url.value);
+    this.url.element.classList.add('active');
+    setTimeout(()=>{this.url.element.classList.remove('active')},200);
   }
 }

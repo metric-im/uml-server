@@ -35,3 +35,9 @@
 .uml-controls BUTTON {
     width:150px;
 }
+.uml-url input {
+    transition:color 100ms;
+}
+.uml-url.active input {
+    background-color:greenyellow;
+}
