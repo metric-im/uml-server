@@ -25,7 +25,7 @@ export default class UML extends Componentry.Module {
     router.get('/uml/edit/:code?',async (req,res)=>{
       try {
         let code = decodeURIComponent(req.params.code || req.query.code || req.query.txt); // txt is deprecated
-        code = code.replace('\n','\\n');
+        code = code.replaceAll('\n','\\n');
         let html = await this.connector.componentry.render('UmlEditor',{code:code})
         res.send(html);
       } catch (e) {
