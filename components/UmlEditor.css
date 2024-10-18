@@ -7,7 +7,7 @@
 .uml-container {
     position:absolute;
     top:var(--spacer);
-    bottom:var(--spacer);
+    bottom:var(--spacer2);
     left:var(--spacer);
     right:var(--spacer);
     display:flex;
@@ -30,7 +30,6 @@
 .uml-controls {
     display: flex;
     flex-direction: row;
-    margin-top:var(--spacer);
 }
 .uml-controls BUTTON {
     width:150px;
